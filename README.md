@@ -8,7 +8,7 @@ Este es un sistema web que permite generar códigos QR de forma rápida y sencil
 - Interfaz simple y amigable.
 - Listo para integrarse en otros sistemas o utilizar como herramienta independiente.
 
-## 🛠️ Tecnologías utilizadas
+## Tecnologías utilizadas
 
 - HTML
 - CSS
