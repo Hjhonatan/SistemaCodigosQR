@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Generador de Código QR</title>
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+  <div class="container">
+    <div class="formulario">
+      <h2>Generado de Codigo QR Ibero</h2>
+
+      <div class="campo">
+        <label for="nombre">Nombre del código QR</label>
+        <input type="text" id="nombre" placeholder="EJ: Youtube" oninput="mostrarTexto()">
+      </div>
+
+      <div class="campo">
+        <label for="texto">Enlace</label>
+        <input type="text" id="texto" placeholder="Ej. Youtube.com">
+      </div>
+      
+      <div class="campo">
+        <label>Color del código QR</label>
+        <div class="colores">
+          <label class="color-option" style="background-color: #000000;">
+            <input type="radio" name="color" value="#000000" checked>
+          </label>
+          <label class="color-option" style="background-color: #ceff1e;">
+            <input type="radio" name="color" value="#ceff1e">
+          </label>
+          <label class="color-option" style="background-color: #3917d3;">
+            <input type="radio" name="color" value="#3917d3">
+          </label>
+          <label class="color-option" style="background-color: #a918b6;">
+            <input type="radio" name="color" value="#a918b6">
+          </label>
+          <label class="color-option" style="background-color: #e40000;">
+            <input type="radio" name="color" value="#e40000">
+          </label>
+        </div>
+      </div>
+      
+
+      <button class="btn" id="btn-generar" onclick="generarQR()" disabled>Generar Código QR</button>
+      <button class="btn" id="btn-descargar" onclick="descargarQR()" disabled>Descargar QR</button>
+      <button class="btn" onclick="reiniciarFormulario()">Crear otro</button>
+
+    </div>
+
+    <div class="preview">
+      <div class="phone-frame">
+        <div class="qr-container">
+            <p id="resultadoTexto"></p>
+          <canvas id="qrcode"></canvas>
+          <p>¡Escanéame!</p>
+        </div>
+      </div>
+    </div>
+
+    <footer>Desarrollado por Carol Acosta y Jhonatan Herrera</footer>
+  </div>
+
+  <!-- Librería QR -->
+  <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+ <script src="app.js"></script>
+  
+</body>
+</html>
