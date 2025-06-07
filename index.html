@@ -1,71 +1,116 @@
 <!DOCTYPE html>
+<!-- Indica que el documento está escrito en HTML5 -->
 <html lang="es">
+<!-- Lenguaje principal del contenido: Español -->
+
 <head>
   <meta charset="UTF-8" />
+  <!-- Codificación de caracteres: UTF-8 (permite caracteres especiales como tildes, ñ, etc.) -->
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Hace que la página sea responsive (se adapte a dispositivos móviles) -->
+
   <title>Generador de Código QR</title>
-<link rel="stylesheet" href="estilo.css">
+  <!-- Título que aparecerá en la pestaña del navegador -->
+
+  <link rel="stylesheet" href="estilo.css">
+  <!-- Enlace al archivo CSS para estilos personalizados -->
 </head>
+
 <body>
   <div class="container">
+    <!-- Contenedor principal -->
+
     <div class="formulario">
+      <!-- Sección del formulario -->
+
       <h2>Generado de Codigo QR Ibero</h2>
+      <!-- Título del formulario -->
 
       <div class="campo">
+        <!-- Campo para ingresar el nombre del QR -->
         <label for="nombre">Nombre del código QR</label>
         <input type="text" id="nombre" placeholder="EJ: Youtube" oninput="mostrarTexto()">
+        <!-- Campo de texto con evento oninput para mostrar el texto ingresado -->
       </div>
 
       <div class="campo">
+        <!-- Campo para ingresar el enlace que se codificará -->
         <label for="texto">Enlace</label>
         <input type="text" id="texto" placeholder="Ej. Youtube.com">
       </div>
-      
+
       <div class="campo">
+        <!-- Sección para elegir color del código QR -->
         <label>Color del código QR</label>
         <div class="colores">
+          <!-- Opciones de color, cada una representada por un botón de radio -->
+
           <label class="color-option" style="background-color: #000000;">
             <input type="radio" name="color" value="#000000" checked>
           </label>
+
           <label class="color-option" style="background-color: #ceff1e;">
             <input type="radio" name="color" value="#ceff1e">
           </label>
+
           <label class="color-option" style="background-color: #3917d3;">
             <input type="radio" name="color" value="#3917d3">
           </label>
+
           <label class="color-option" style="background-color: #a918b6;">
             <input type="radio" name="color" value="#a918b6">
           </label>
+
           <label class="color-option" style="background-color: #e40000;">
             <input type="radio" name="color" value="#e40000">
           </label>
         </div>
       </div>
-      
 
+      <!-- Botones de acción -->
       <button class="btn" id="btn-generar" onclick="generarQR()" disabled>Generar Código QR</button>
-      <button class="btn" id="btn-descargar" onclick="descargarQR()" disabled>Descargar QR</button>
-      <button class="btn" onclick="reiniciarFormulario()">Crear otro</button>
+      <!-- Generar el código QR (inicialmente deshabilitado) -->
 
+      <button class="btn" id="btn-descargar" onclick="descargarQR()" disabled>Descargar QR</button>
+      <!-- Descargar el QR generado (inicialmente deshabilitado) -->
+
+      <button class="btn" onclick="reiniciarFormulario()">Crear otro</button>
+      <!-- Reinicia el formulario para generar otro QR -->
     </div>
 
     <div class="preview">
+      <!-- Sección de vista previa del código QR -->
+
       <div class="phone-frame">
+        <!-- Marco de estilo móvil para simular una pantalla de teléfono -->
+
         <div class="qr-container">
-            <p id="resultadoTexto"></p>
+          <!-- Contenedor del QR -->
+          <p id="resultadoTexto"></p>
+          <!-- Aquí se muestra el nombre del código QR -->
+
           <canvas id="qrcode"></canvas>
+          <!-- Lienzo donde se dibuja el código QR -->
+
           <p>¡Escanéame!</p>
+          <!-- Texto decorativo -->
         </div>
       </div>
     </div>
 
     <footer>Desarrollado por Carol Acosta y Jhonatan Herrera</footer>
+    <!-- Pie de página con créditos -->
   </div>
 
-  <!-- Librería QR -->
+  <!-- Librerías externas necesarias para generar y capturar QR -->
   <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+  <!-- Librería para generar códigos QR -->
+
   <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
- <script src="app.js"></script>
-  
+  <!-- Librería para convertir HTML a imagen (útil para descargar el QR) -->
+
+  <script src="app.js"></script>
+  <!-- Archivo JS personalizado con la lógica del generador -->
 </body>
 </html>
