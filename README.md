@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Generador de Código QR Ibero
 
 Este proyecto es una aplicación web, que permite generar códigos QR personalizados a partir de un enlace proporcionado por el usuario. El usuario puede asignar un nombre al código, seleccionar un color y descargar el QR como imagen.
